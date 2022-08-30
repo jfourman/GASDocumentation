@@ -22,7 +22,8 @@ AGDHeroCharacter::AGDHeroCharacter(const class FObjectInitializer& ObjectInitial
 {
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(FName("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->bUsePawnControlRotation = true;
+	CameraBoom->bUsePawnControlRotation = true; // Rotate the arm based on the controller
+	//CameraBoom->TargetArmLength = 400.0f; // The camera follows at this distance behind the character	
 	CameraBoom->SetRelativeLocation(FVector(0, 0, 68.492264));
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(FName("FollowCamera"));
